@@ -1,21 +1,20 @@
-import React from 'react';
+import React from "react";
 import Button from "../Button/Button";
-import {useTelegram} from "../../hooks/useTelegram";
-import './Header.css';
+import { useTelegram } from "../../hooks/useTelegram";
+import "./Header.css";
+import AlertButton from "../AlertButton/AlertButton";
 
 const Header = () => {
-    const {user, onClose} = useTelegram();
+  const { user, onClose } = useTelegram();
 
-    return (
-        <div className={'header'}>
-            <Button onClick={onClose}>Закрыть</Button>
-            {/* <span className={'username'}> */}
-            <span className="text-3xl font-bold underline">
-                {user?.username}
-            </span>
-            <div className="text-3xl font-bold underline">asdasdasdasdsad</div>
-        </div>
-    );
+  return (
+    <div className={"header"}>
+      <AlertButton onClick={onClose}>&#x2715;</AlertButton>
+      <div className="">
+        Wellcome <span className="font-bold underline">{user?.username}</span>
+      </div>
+    </div>
+  );
 };
 
 export default Header;
